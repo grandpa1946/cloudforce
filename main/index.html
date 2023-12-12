@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cloudforce</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta content="Main Web" name="description" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/attachments/1061755202086125678/1085013775893143563/Boosteriod_Rounded.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./install/js/loading-bar.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/combine/npm/flowbite@1/dist/flowbite.min.css,npm/daisyui@2/dist/full.css"
+      rel="stylesheet"
+    />
+    <script
+      async
+      defer
+      src="https://cdn.jsdelivr.net/combine/npm/flowbite@1/dist/flowbite.min.js,npm/@fortawesome/fontawesome-free@6/js/all.min.js"
+      data-cfasync="false"
+    ></script>
+    <script src="https://cdn.tailwindcss.com" data-cfasync="false"></script>
+    <script type="text/javascript" src="./install/js/loading-bar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="sidebar" id="sidebar-main">
+      <div class="logo-details">
+        <div class="logo_name">Cloudforce</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="search" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="#" id="dashboard-link" onclick="showDashboardSection()">
+            <i class="bx bx-home"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="#" onclick="showFilesSection()">
+            <i class="bx bx-game"></i>
+            <span class="links_name">Games</span>
+          </a>
+          <span class="tooltip">Games</span>
+        </li>
+        <li>
+          <a href="#" onclick="showAppsSection()">
+            <i class="bx bx-category"></i>
+            <span class="links_name">Apps</span>
+          </a>
+          <span class="tooltip">Apps</span>
+        </li>
+        <li>
+          <a href="#" onclick="showDownloadSection()">
+            <i class="bx bx-download"></i>
+            <span class="links_name">Downloads</span>
+          </a>
+          <span class="tooltip">Downloads</span>
+        </li>
+        <li>
+          <a href="#" onclick="showSettingsSection()">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="./assets/profile.png" alt="profileImg" />
+            <div class="name_job">
+              <div class="name" id="loginlabel">Login</div>
+              <div class="job"></div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out" onclick="showLoginForm()"></i>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section" id="dashboard-section" style="display: block">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+          <h2
+            class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            style="transition: all 0.5s ease"
+          >
+            Cloudforce
+          </h2>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-2">
+          <article
+            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+              <span
+                class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+              >
+                <svg
+                  class="mr-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                </svg>
+                Info
+              </span>
+            </div>
+            <h2
+              class="mb-2 text-2xl font-bold trackingHere's the continuation of the corrected HTML code: ```html -tight text-gray-900 dark:text-white"
+            >
+              <a href="#games">Games</a>
+              <span
+                class="inline-flex items-center"
+                style="align-self: center"
+                id="games-status"
+              >
+                <div
+                  class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200"
+                >
+                  Fetching...
+                </div>
+              </span>
+            </h2>
+            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+              View games that you can install!
+            </p>
+            <div class="flex justify-between items-center">
+              <a
+                href="#files"
+                onclick="showFilesSection()"
+                class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                style="color: rgb(221, 221, 221)"
+              >
+                Explore Games
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+          <article
+            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+              <span
+                class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+              >
+                <svg
+                  class="mr-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                </svg>
+                Info
+              </span>
+            </div>
+            <h2
+              class="mb-2 text-2xl font-bold trackingHere's the continuation of the corrected HTML code: ```html -tight text-gray-900 dark:text-white"
+            >
+              <a href="#apps">Apps</a>
+              <span
+                class="inline-flex items-center"
+                style="align-self: center"
+                id="apps-status"
+              >
+                <div
+                  class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200"
+                >
+                  Fetching...
+                </div>
+              </span>
+            </h2>
+            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+              View apps that you can install!
+            </p>
+            <div class="flex justify-between items-center">
+              <a
+                href="#apps"
+                onclick="showAppsSection()"
+                class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                style="color: rgb(221, 221, 221)"
+              >
+                Explore Apps
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+          <article
+            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+              <span
+                class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+              >
+                <svg
+                  class="mr-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                </svg>
+                Info
+              </span>
+            </div>
+            <h2
+              class="mb-2 text-2xl font-bold trackingHere's the continuation of the corrected HTML code: ```html -tight text-gray-900 dark:text-white"
+              style="align-items: center"
+            >
+              <a href="#installed">Installed Games</a>
+              <span
+                class="inline-flex items-center"
+                style="align-self: center"
+                id="installed-status"
+                onclick="showInstalledGamesSection(); fetchInstalledContent()"
+              >
+                <div
+                  class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200"
+                >
+                  Fetching...
+                </div>
+              </span>
+            </h2>
+            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+              Checkout the games you installed!
+            </p>
+            <div class="flex justify-between items-center">
+              <a
+                href="#installed"
+                onclick="showInstalledGamesSection(); fetchInstalledContent()"
+                class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                style="color: rgb(221, 221, 221)"
+              >
+                View
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+          <article
+            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+              <span
+                class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+              >
+                <svg
+                  class="mr-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                </svg>
+                Help
+              </span>
+            </div>
+            <h2
+              class="mb-2 text-2xl font-bold trackingHere's the continuation of the corrected HTML code: ```html -tight text-gray-900 dark:text-white"
+            >
+              <a
+                href="https://discord.gg/zortos-cloud-gaming-926861356148326502"
+                >Support (Discord)</a
+              >
+            </h2>
+            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+              On life support? Join our discord!
+            </p>
+            <div class="flex justify-between items-center">
+              <a
+                href="https://discord.gg/zortos-cloud-gaming-926861356148326502"
+                class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                style="color: rgb(221, 221, 221)"
+              >
+                Visit
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+          <a id="creditss">Made by @printedwaste and @zortosofficial <p id="active">Lifetime users: Fetching</p></a>
+        </div>
+      </div>
+    </section>
+    <section
+      class="download-section"
+      id="downloader-section"
+      style="display: none"
+    >
+      <div>
+        <div class="downloader-text">Downloader</div>
+        <span class="inline-flex items-center" id="downloader-size">
+          <div
+            class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200"
+          >
+            Fetching...
+          </div>
+        </span>
+        <div class="downloader-game-name" id="downloader-game-name">Null</div>
+        <button
+          href="#"
+          class="download-button"
+          style="display: block"
+          id="download-button"
+        >
+          Install
+        </button>
+        <p
+          style="font-size: 12px; position: fixed; bottom: 3px; right: 45px"
+          id="size1"
+        >
+          0.00GB
+        </p>
+        <input
+          type="text"
+          id="downloadlocation"
+          name="DownloadDirectory"
+          placeholder="C:\Cloudforce\"
+          value="C:\Cloudforce\"
+          class="download-location"
+        />
+        <a class="download-status" id="download-status"></a>
+        <div style="width: 36%; position: absolute; top: 88%; left: 32%">
+          <label
+            class="block mt-2 text-sm font-medium text-gray-900 dark:text-white"
+            id="transfer-rate-label"
+            style="display: block"
+          >
+            Transfer Rate:
+            <a id="transfer-rate">10</a>
+          </label>
+          <label
+            class="block mt-2 text-sm font-medium text-red-900 dark:text-red"
+            style="display: none"
+            id="transfer-rate-error"
+            >Don't move the slider if you don't know what your doing.</label
+          >
+          <input
+            id="minmax-range"
+            type="range"
+            min="4"
+            max="20"
+            value="10"
+            class="w-full h-2.5 bg-gray-200 rounded-full appearance-none cursor-pointer dark:bg-gray-700"
+          />
+        </div>
+        <div id="shard1234">
+          <div class="flex justify-between mb-1">
+            <span
+              class="text-base font-medium text-blue-700 dark:text-white"
+              id="download-speed"
+              >0.00MiB/S</span
+            >
+            <span
+              class="text-sm font-medium text-blue-700 dark:text-white"
+              id="download-progress"
+              >0% | ETA: INF</span
+            >
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              class="bg-blue-600 h-2.5 rounded-full"
+              id="download-bar"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="app-downloader-section"
+      id="app-downloader-section"
+      style="display: none"
+    >
+      <div class="downloader-text">
+        App Info
+        <span
+          class="inline-flex items-center"
+          style="align-self: center"
+          id="app-status"
+        >
+          <div
+            class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200"
+          >
+            Fetching...
+          </div>
+        </span>
+      </div>
+      <div>
+        <div class="downloader-game-name" id="appdl-app-name">Null</div>
+        <div class="downloader-app-name" id="appdl-app-description">Null</div>
+
+        <button
+          href="#"
+          class="download-button"
+          style="display: block"
+          id="app-download-button"
+        >
+          Install
+        </button>
+      </div>
+    </section>
+    <section class="home-section" id="installed-section" style="display: none">
+      <div class="text">Installed Games</div>
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="grid gap-8 lg:grid-cols-2" id="banner-list"></div>
+      </div>
+      <a id="creditss" class="creditss"
+        >Looking for Apps? Just go to the apps section and click an installed
+        one!</a
+      >
+    </section>
+    <section class="home-section" id="files-section" style="display: none">
+      <div class="text">Games</div>
+      <input
+        placeholder="Search..."
+        class="games-search"
+        oninput="handleSearch()"
+        id="games-search"
+      />
+      <div class="game-list"></div>
+      <a
+        id="no-data"
+        class="nodata"
+        style="display: none; align-self: center; padding-left: 200px"
+        >No results</a
+      >
+    </section>
+    <section class="home-section" id="apps-section" style="display: none">
+      <div class="text">Apps</div>
+      <div class="apps-list"></div>
+    </section>
+    <section class="home-section" id="settings-section" style="display: none">
+      <div class="text">Settings</div>
+    </section>
+    <div class="floating-popup-box">
+      <div class="floating-popup-box-emoji" id="Popup-Emoji">ℹ️</div>
+      <div class="floating-popup-box-content">
+        <p>This is a floating popup box!</p>
+        <button class="floating-popup-box-close-button">&times;</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
