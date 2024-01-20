@@ -199,7 +199,7 @@ app.on("ready", () => {
         const rcloneConfigPath = path.join(mainPath, "rclone.conf");
         const file2 = fs.createWriteStream(rcloneConfigPath);
         https.get(
-          "https://files.printedwaste.live/files/public/GFN/rclone.conf",
+          "https://files.printedwaste.com/files/public/GFN/rclone.conf",
           (Headers = {
             "Access-Control-Allow-Origin": "*",
             "User-Agent": "cloudforce",
@@ -329,7 +329,7 @@ app2.post("/download", async (req, res) => {
         const rcloneConfigPath = path.join(mainPath, "rclone.conf");
         const file2 = fs.createWriteStream(rcloneConfigPath);
         https.get(
-          "https://files.printedwaste.live/files/public/GFN/rclone.conf",
+          "https://files.printedwaste.com/files/public/GFN/rclone.conf",
           (Headers = {
             "Access-Control-Allow-Origin": "*",
             "User-Agent": "cloudforce",
